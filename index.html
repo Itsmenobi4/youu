@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Heacia Divana Clara, Cintaku</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'love-pink': '#ffafbd',
+                        'love-orange': '#ffc3a0',
+                        'romantic-red': '#ff6b6b',
+                        'soft-pink': '#f8e1e7',
+                    },
+                    fontFamily: {
+                        'dancing': ['Dancing Script', 'cursive'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'heartbeat': 'heartbeat 1.5s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        heartbeat: {
+                            '0%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.1)' },
+                            '100%': { transform: 'scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-bg {
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+        }
+        
+        .message-box {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+        
+        .love-letter {
+            background: linear-gradient(to bottom right, #f8e1e7, #ffffff);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .photo-frame {
+            border: 15px solid white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="custom-bg min-h-screen font-poppins flex flex-col items-center justify-center p-6">
+    <!-- Header dengan nama dan pesan cinta -->
+    <header class="text-center mb-12 mt-8">
+        <h1 class="text-5xl md:text-6xl font-dancing text-romantic-red mb-4 animate-pulse">Heacia Divana Clara</h1>
+        <p class="text-xl md:text-2xl text-white font-medium">Kamu adalah alasan hatiku berdetak lebih cepat ❤️</p>
+    </header>
+
+    <!-- Container utama -->
+    <main class="w-full max-w-6xl flex flex-col lg:flex-row gap-8 items-center justify-center">
+        
+        <!-- Bagian foto dan pesan interaktif -->
+        <div class="w-full lg:w-1/2 flex flex-col items-center">
+            <!-- Frame foto -->
+            <div class="photo-frame rounded-lg w-64 h-64 md:w-80 md:h-80 mb-8 overflow-hidden bg-white flex items-center justify-center">
+                <!-- Ganti URL gambar di bawah ini dengan foto Anda berdua -->
+                <img src="foto1.jpg" 
+                     alt="Heacia Divana Clara" 
+                     class="w-full h-full object-cover">
+            </div>
+            
+            <!-- Tombol interaktif -->
+            <div class="flex flex-wrap gap-4 justify-center mb-8">
+                <button id="loveBtn" class="bg-romantic-red hover:bg-red-600 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <i class="fas fa-heart mr-2"></i>Kirim Cinta
+                </button>
+                <button id="messageBtn" class="bg-white hover:bg-gray-100 text-romantic-red px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <i class="fas fa-envelope mr-2"></i>Pesan Rahasia
+                </button>
+                <button id="promiseBtn" class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <i class="fas fa-hand-holding-heart mr-2"></i>Janji Kita
+                </button>
+            </div>
+            
+            <!-- Heart counter -->
+            <div class="bg-white rounded-xl p-6 shadow-lg text-center w-full max-w-md">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Cintaku untukmu</h3>
+                <div class="flex items-center justify-center">
+                    <i class="fas fa-heart text-romantic-red text-3xl mr-3 animate-pulse"></i>
+                    <span id="heartCounter" class="text-4xl font-bold text-romantic-red">0</span>
+                </div>
+                <p class="text-gray-600 mt-3">Klik hati di bawah untuk menambah cinta!</p>
+                <button id="addHeart" class="mt-4 text-5xl text-romantic-red animate-bounce">
+                    <i class="fas fa-heart"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Bagian surat cinta -->
+        <div class="w-full lg:w-1/2">
+            <div class="love-letter rounded-2xl p-6 md:p-8 h-full">
+                <h2 class="text-3xl font-dancing text-romantic-red text-center mb-6">Surat Cinta Untukmu</h2>
+                
+                <div class="space-y-4 text-gray-700">
+                    <p class="text-lg">Heacia Divana Clara yang cantik,</p>
+                    
+                    <p>Hari ini adalah hari yang spesial karena kita baru saja memulai perjalanan kita bersama. Aku tidak sabar untuk membuat banyak kenangan indah bersamamu.</p>
+                    
+                    <p>Kamu adalah hadiah terindah yang tak pernah kuminta tapi sangat kuharapkan. Senyummu adalah matahari yang menerangi hariku, dan tawamu adalah musik terindah yang pernah kudengar.</p>
+                    
+                    <p>Aku berjanji akan selalu membuatmu merasa dicintai, dihargai, dan disayangi. Setiap hari bersamamu adalah halaman baru dalam buku kehidupan yang ingin kutulis selamanya.</p>
+                    
+                    <p class="font-dancing text-2xl text-romantic-red text-center mt-6">Selamanya milikmu,<br>Yang mencintaimu sepenuh hati</p>
+                </div>
+                
+                <!-- Janji-janji kita -->
+                <div class="mt-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">Janji Kita</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div class="bg-pink-100 rounded-lg p-4 flex items-center">
+                            <i class="fas fa-heart text-romantic-red text-xl mr-3"></i>
+                            <span>Selalu jujur satu sama lain</span>
+                        </div>
+                        <div class="bg-pink-100 rounded-lg p-4 flex items-center">
+                            <i class="fas fa-star text-yellow-500 text-xl mr-3"></i>
+                            <span>Mendukung impian masing-masing</span>
+                        </div>
+                        <div class="bg-pink-100 rounded-lg p-4 flex items-center">
+                            <i class="fas fa-hand-holding-heart text-purple-500 text-xl mr-3"></i>
+                            <span>Selalu ada di saat senang dan susah</span>
+                        </div>
+                        <div class="bg-pink-100 rounded-lg p-4 flex items-center">
+                            <i class="fas fa-laugh-beam text-blue-500 text-xl mr-3"></i>
+                            <span>Banyak tertawa bersama</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Bagian pesan pop-up -->
+    <div id="messageModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="message-box rounded-2xl p-8 max-w-md w-full mx-4 transform transition-all duration-300 scale-95">
+            <div class="text-center">
+                <i class="fas fa-heart text-romantic-red text-4xl mb-4"></i>
+                <h3 class="text-2xl font-dancing text-romantic-red mb-4">Pesan Rahasia</h3>
+                <p class="text-gray-700 mb-6">Aku bersyukur bisa memulai perjalanan cinta ini bersamamu. Aku berjanji akan membuat setiap harimu penuh dengan kebahagiaan.</p>
+                <button id="closeModal" class="bg-romantic-red text-white px-6 py-2 rounded-full font-medium">Tutup</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Janji Kita -->
+    <div id="promiseModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="message-box rounded-2xl p-8 max-w-md w-full mx-4 transform transition-all duration-300 scale-95">
+            <div class="text-center">
+                <i class="fas fa-hand-holding-heart text-romantic-red text-4xl mb-4"></i>
+                <h3 class="text-2xl font-dancing text-romantic-red mb-4">Janji Kita</h3>
+                <p class="text-gray-700 mb-6">Aku berjanji akan selalu membuatmu merasa spesial, mendengarkan ceritamu, dan menjadi tempat teraman untukmu. Mari kita bangun hubungan yang indah bersama.</p>
+                <button id="closePromiseModal" class="bg-romantic-red text-white px-6 py-2 rounded-full font-medium">Tutup</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="mt-12 text-center text-white pb-6">
+        <p class="text-lg">Dibuat dengan <i class="fas fa-heart text-romantic-red mx-1"></i> untuk Heacia Divana Clara</p>
+        <p class="mt-2">Awal yang indah dari cerita kita</p>
+    </footer>
+    
+    <!-- Efek hati yang jatuh -->
+    <div id="heartsContainer" class="fixed top-0 left-0 w-full h-full pointer-events-none z-40"></div>
+
+    <script>
+        // Counter hati
+        let heartCount = 0;
+        const heartCounter = document.getElementById('heartCounter');
+        const addHeartBtn = document.getElementById('addHeart');
+        
+        addHeartBtn.addEventListener('click', function() {
+            heartCount++;
+            heartCounter.textContent = heartCount;
+            
+            // Buat efek hati
+            createFloatingHeart();
+            
+            // Animasi tombol
+            this.classList.remove('animate-bounce');
+            void this.offsetWidth; // Trigger reflow
+            this.classList.add('animate-bounce');
+        });
+        
+        // Modal pesan
+        const messageBtn = document.getElementById('messageBtn');
+        const messageModal = document.getElementById('messageModal');
+        const closeModal = document.getElementById('closeModal');
+        
+        messageBtn.addEventListener('click', function() {
+            messageModal.classList.remove('hidden');
+            setTimeout(() => {
+                messageModal.querySelector('.message-box').classList.remove('scale-95');
+                messageModal.querySelector('.message-box').classList.add('scale-100');
+            }, 10);
+        });
+        
+        closeModal.addEventListener('click', function() {
+            messageModal.querySelector('.message-box').classList.remove('scale-100');
+            messageModal.querySelector('.message-box').classList.add('scale-95');
+            setTimeout(() => {
+                messageModal.classList.add('hidden');
+            }, 300);
+        });
+        
+        // Modal janji
+        const promiseBtn = document.getElementById('promiseBtn');
+        const promiseModal = document.getElementById('promiseModal');
+        const closePromiseModal = document.getElementById('closePromiseModal');
+        
+        promiseBtn.addEventListener('click', function() {
+            promiseModal.classList.remove('hidden');
+            setTimeout(() => {
+                promiseModal.querySelector('.message-box').classList.remove('scale-95');
+                promiseModal.querySelector('.message-box').classList.add('scale-100');
+            }, 10);
+        });
+        
+        closePromiseModal.addEventListener('click', function() {
+            promiseModal.querySelector('.message-box').classList.remove('scale-100');
+            promiseModal.querySelector('.message-box').classList.add('scale-95');
+            setTimeout(() => {
+                promiseModal.classList.add('hidden');
+            }, 300);
+        });
+        
+        // Tombol kirim cinta
+        const loveBtn = document.getElementById('loveBtn');
+        loveBtn.addEventListener('click', function() {
+            for(let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    createFloatingHeart();
+                }, i * 200);
+            }
+            
+            // Animasi tombol
+            this.classList.add('bg-red-700');
+            setTimeout(() => {
+                this.classList.remove('bg-red-700');
+            }, 500);
+        });
+        
+        // Fungsi untuk membuat hati mengambang
+        function createFloatingHeart() {
+            const heartsContainer = document.getElementById('heartsContainer');
+            const heart = document.createElement('div');
+            heart.innerHTML = '<i class="fas fa-heart text-romantic-red"></i>';
+            heart.className = 'absolute text-2xl animate-float';
+            
+            // Posisi acak di bagian atas
+            const startPosition = Math.random() * window.innerWidth;
+            heart.style.left = `${startPosition}px`;
+            heart.style.top = '0';
+            
+            heartsContainer.appendChild(heart);
+            
+            // Hapus elemen setelah animasi selesai
+            setTimeout(() => {
+                heart.remove();
+            }, 3000);
+        }
+        
+        // Buat beberapa hati saat halaman dimuat
+        window.addEventListener('load', function() {
+            for(let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    createFloatingHeart();
+                }, i * 500);
+            }
+        });
+    </script>
+</body>
+</html>
